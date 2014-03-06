@@ -1,0 +1,84 @@
+<html>
+
+<p align="center">
+<h1 align="center">Listing words</h1>
+</p>
+
+<br>
+
+<h3>Enter word</h3>
+
+<form action ="words/search" method="post">
+<input name = "key" type="input" />
+<input value="Send" type="submit"/>
+</form>
+<br>
+
+<%= link_to ('A'), words_path(:word=>'A')%>
+<%= link_to ('B'), words_path(:word=>'B')%>
+<%= link_to ('C'), words_path(:word=>'C')%>
+<%= link_to ('C'), words_path(:word=>'C')%>
+<%= link_to ('D'), words_path(:word=>'D')%>
+<%= link_to ('E'), words_path(:word=>'E')%>
+<%= link_to ('F'), words_path(:word=>'F')%>
+<%= link_to ('G'), words_path(:word=>'G')%>
+<%= link_to ('H'), words_path(:word=>'H')%>
+<%= link_to ('I'), words_path(:word=>'I')%>
+<%= link_to ('J'), words_path(:word=>'J')%>
+<%= link_to ('K'), words_path(:word=>'K')%>
+<%= link_to ('L'), words_path(:word=>'L')%>
+<%= link_to ('M'), words_path(:word=>'M')%>
+<%= link_to ('N'), words_path(:word=>'N')%>
+<%= link_to ('O'), words_path(:word=>'O')%>
+<%= link_to ('P'), words_path(:word=>'P')%>
+<%= link_to ('Q'), words_path(:word=>'Q')%>
+<%= link_to ('R'), words_path(:word=>'R')%>
+<%= link_to ('S'), words_path(:word=>'S')%>
+<%= link_to ('T'), words_path(:word=>'T')%>
+<%= link_to ('U'), words_path(:word=>'U')%>
+<%= link_to ('V'), words_path(:word=>'V')%>
+<%= link_to ('W'), words_path(:word=>'W')%>
+<%= link_to ('X'), words_path(:word=>'X')%>
+<%= link_to ('Y'), words_path(:word=>'Y')%>
+<%= link_to ('Z'), words_path(:word=>'Z')%>
+
+<br>
+<table>
+  <thead>
+    
+  </thead>
+
+  <tbody>
+    <% @words.each do |word| %>
+    <% if word.word.chars.first==@letter%>
+    
+    
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.wordtype %></td>
+        <td><%= word.description %></td>
+        <td><%= link_to 'Show', word %></td>
+        
+      </tr>
+	<% else if @letter == nil %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.wordtype %></td>
+        <td><%= word.description %></td>
+        <td><%= link_to 'Show', word %></td>
+        
+      </tr>
+	<% end %>
+    <% end %>
+    <% end %>
+    
+  </tbody>
+</table>
+
+
+
+
+<br/>
+</html>
+
+

@@ -1,0 +1,16 @@
+class Word < ActiveRecord::Base
+@grouped = {}
+  Word.all.each do |word|
+  letter = word.word.slice(0,1).upcase
+  @grouped[letter] ||= []
+  @grouped[letter] << word
+  
+ def initial
+    # find a number at the start of the string if it exists
+    m = self.word.match(/^\d+/)
+    return m[0] if m
+    # or return the first letter upcased otherwise
+    return self.word.slice( 0, 1 ).upcase
+  end
+end
+end
